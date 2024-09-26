@@ -1,13 +1,16 @@
 from fastapi import FastAPI
 import logging
+from fastapi_application.settings import Settings
 
-app = FastAPI()
+settings = Settings()
+app = FastAPI(title=settings.app_name)
 
 logging.basicConfig(
     level=logging.DEBUG,
     format="[%(asctime)s] %(levelname)s - %(message)s",
     datefmt="%m/%d/%Y %I:%M:%S %p",
 )
+#hola
 
 logger = logging.getLogger(__name__)
 
